@@ -2,15 +2,13 @@
   <div id="app">
     <div>{{message}}</div>
     <div>44</div>
-    <Bb></Bb>
   </div>
 </template>
 
 <script>
-  import Bb from './Bb.vue'
     export default {
         name: 'App',
-        components: {Bb},
+        components: {},
 
         data () {
             return {message: '6666'}
