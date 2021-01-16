@@ -22,9 +22,13 @@ module.exports = {
         clientLogLevel: 'error'
     },
     resolve: {
+        extensions: ['.js', '.vue', '.json'],
         alias: {
             vue: 'vue/dist/vue.js',
             src: path.resolve(__dirname, './src'),
+            packages: path.resolve(__dirname, './src/packages'),
+            asset: path.resolve(__dirname, './src/asset'),
+            style: path.resolve(__dirname, './src/style')
         }
     },
 
@@ -69,9 +73,10 @@ module.exports = {
             },
             {
                 test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
-                use: [
-                    'file-loader'
-                ]
+                loader: 'file-loader',
+                options: {
+                    esModule: false
+                }
             }
         ]
     },

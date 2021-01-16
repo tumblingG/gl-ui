@@ -1,14 +1,19 @@
 <template>
   <div id="app">
-    <div>{{message}}</div>
-    <div>44</div>
+    <test/>
   </div>
 </template>
-
 <script>
+    import '@ionic/vue/css/core.css';
+
+    /* Basic CSS for apps built with Ionic */
+    import '@ionic/vue/css/normalize.css';
+    import '@ionic/vue/css/structure.css';
+    import '@ionic/vue/css/typography.css';
+  import Test from './Test.vue'
     export default {
         name: 'App',
-        components: {},
+        components: {Test},
 
         data () {
             return {message: '6666'}
@@ -16,7 +21,7 @@
     }
 </script>
 
-<style scoped lang="less">
+<style lang="less">
   #app {
     color: red;
   }

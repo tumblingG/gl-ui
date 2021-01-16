@@ -42,6 +42,7 @@
     "webpack-dev-server": "^3.11.1"
   },
   "dependencies": {
+    "@ionic/vue": "^5.5.2",
     "vue": "^2.6.12"
   }
 }

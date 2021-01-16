@@ -7,4 +7,4 @@
 </template>
 
 <script src="./_scalable.js" lang="js"></script>
-<style src="./_scalable.less" lang="less" scoped></style>
+<style src="./_scalable.less" lang="less"></style>
