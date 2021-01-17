@@ -1,12 +1,13 @@
 <template>
   <div>
+    <ion-icon name="heart"></ion-icon>
     <button class="button button-positive button-block">positive</button>
-    <div class="item">
-      <img class="img" src="../src/assets/haha3.jpg">
+    <div class="item row">
+      <img class="img" src="../assets/haha3.jpg">
     </div>
     <scaleable :scale="2" width="200" height="200">
       <div class="item item1">
-        <img class="img" src="../src/assets/haha3.jpg">
+        <img class="img" src="../assets/haha3.jpg">
       </div>
     </scaleable>
     <badge :num="3"></badge>
@@ -26,7 +27,7 @@
 </script>
 
 <style lang="less">
-  @import "~style/mixins";
+  @import "~theme-default/mixins.less";
   .item {
     width: 100px;
     height: 100px;

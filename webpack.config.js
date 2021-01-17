@@ -2,12 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const { VueLoaderPlugin } = require('vue-loader');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ESLintPlugin = require('eslint-webpack-plugin');
+// const ESLintPlugin = require('eslint-webpack-plugin');
 
 module.exports = {
     mode: 'development',
 
-    entry: './demo/main.js',
+    entry: './src/demo/main.js',
 
     output: {
         filename: "[name].bundle.js",
@@ -22,13 +22,13 @@ module.exports = {
         clientLogLevel: 'error'
     },
     resolve: {
-        extensions: ['.js', '.vue', '.json'],
+        extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
         alias: {
             vue: 'vue/dist/vue.js',
             src: path.resolve(__dirname, './src'),
             packages: path.resolve(__dirname, './src/packages'),
             asset: path.resolve(__dirname, './src/asset'),
-            style: path.resolve(__dirname, './src/style')
+            style: path.resolve(__dirname, './src/theme-default')
         }
     },
 
@@ -69,10 +69,26 @@ module.exports = {
             },
             {
                 test: /\.vue$/,
-                loader: 'vue-loader'
+                loader: 'vue-loader',
+                options: {
+                    compilerOptions: {
+                        preserveWhitespace: false
+                    }
+                }
             },
             {
-                test: /\.(png|svg|jpg|gif|woff|woff2|eot|ttf|otf)$/,
+                test: /\.(ts|tsx)$/,
+                exclude: /node_modules/,
+                use: [
+                    "babel-loader",
+                    {
+                        loader: "ts-loader",
+                        options: { appendTsxSuffixTo: [/\.vue$/] }
+                    }
+                ]
+            },
+            {
+                test: /\.(png|svg|jpe?g|gif|woff|woff2|eot|ttf|otf)$/,
                 loader: 'file-loader',
                 options: {
                     esModule: false
@@ -83,15 +99,14 @@ module.exports = {
 
     plugins: [
         // 请确保引入这个插件来施展魔法
-        new ESLintPlugin({
-            extensions: ['js', 'vue'],
-            failOnError: true
-        }),
+        // new ESLintPlugin({
+        //     extensions: ['js', 'vue']
+        // }),
         new VueLoaderPlugin(),
         new HtmlWebpackPlugin({
             title: 'gl-ui',
-            template: './demo/index.html',
-            favicon: './demo/favicon.ico',
+            template: './src/demo/index.html',
+            favicon: './src/demo/favicon.ico',
             inject: true
         }),
         new webpack.HotModuleReplacementPlugin()

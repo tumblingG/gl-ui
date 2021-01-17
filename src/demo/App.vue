@@ -4,13 +4,8 @@
   </div>
 </template>
 <script>
-    import '@ionic/vue/css/core.css';
-
-    /* Basic CSS for apps built with Ionic */
-    import '@ionic/vue/css/normalize.css';
-    import '@ionic/vue/css/structure.css';
-    import '@ionic/vue/css/typography.css';
-  import Test from './Test.vue'
+  // import Test from './Test.vue'
+  import Test from './text2.tsx'
     export default {
         name: 'App',
         components: {Test},
