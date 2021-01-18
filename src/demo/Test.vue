@@ -5,29 +5,31 @@
     <div class="item row">
       <img class="img" src="../assets/haha3.jpg">
     </div>
-    <scaleable :scale="2" width="200" height="200">
+    <scalable :scale="2" width="200" height="200">
       <div class="item item1">
         <img class="img" src="../assets/haha3.jpg">
       </div>
-    </scaleable>
+    </scalable>
     <badge :num="3"></badge>
   </div>
 </template>
 <script>
-    import Scaleable from 'packages/scalable/scalable.vue'
-    import Badge from 'packages/badge/badge'
+    import Scalable from '../packages/scalable'
+    import Badge from 'packages/badge'
+
     export default {
         name: 'Test',
 
         components: {
-            Scaleable,
+            Scalable,
             Badge
         }
     }
 </script>
 
 <style lang="less">
-  @import "~theme-default/mixins.less";
+
+  @import "../theme-default/mixins.less";
   .item {
     width: 100px;
     height: 100px;

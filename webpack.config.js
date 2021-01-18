@@ -22,7 +22,7 @@ module.exports = {
         clientLogLevel: 'error'
     },
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.vue', '.json'],
+        extensions: ['.js', '.vue', '.tsx', '.ts', '.json'],
         alias: {
             vue: 'vue/dist/vue.js',
             src: path.resolve(__dirname, './src'),

@@ -4,8 +4,7 @@
   </div>
 </template>
 <script>
-  // import Test from './Test.vue'
-  import Test from './text2.tsx'
+  import Test from './Test.vue'
     export default {
         name: 'App',
         components: {Test},

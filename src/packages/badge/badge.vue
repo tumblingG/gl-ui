@@ -1,8 +1,13 @@
-<template>
-    <span class="gl-badge">
-      <div v-html="num" class="gl-badge-num"></div>
-    </span>
-</template>
+<script lang="ts">
+import 'reflect-metadata';
+import { Component, Prop, Vue } from 'vue-property-decorator';
 
-<script src="./_badge.js" lang="js"></script>
-<style src="./_badge.less" lang="less"></style>
+@Component({
+    name: 'GlBadge'
+})
+export default class Badge extends Vue {
+    @Prop() readonly num!: number | string;
+}
+</script>
+
+<template src="./badge.html"></template>
