@@ -11,18 +11,23 @@
       </div>
     </scalable>
     <badge :num="3"></badge>
+    <div class="hairline-wrap">
+      <hairline position="top"></hairline>
+    </div>
   </div>
 </template>
 <script>
     import Scalable from '../packages/scalable'
     import Badge from 'packages/badge'
+    import Hairline from 'packages/hairline';
 
     export default {
         name: 'Test',
 
         components: {
             Scalable,
-            Badge
+            Badge,
+            Hairline
         }
     }
 </script>
@@ -45,5 +50,11 @@
   .img {
     height: 100%;
     width: 100%;
+  }
+  .hairline-wrap {
+    width: 100%;
+    position: relative;
+    height: 50px;
+    margin: 20px;
   }
 </style>
