@@ -1,0 +1,38 @@
+@skeleton-text-background-alpha: .065;
+@skeleton-text-background: rgba(0, 0, 0, @skeleton-text-background-alpha);
+@skeleton-text-background-animated-alpha:   .135;
+@skeleton-text-background-animated: rgba(0, 0, 0, @skeleton-text-background-animated-alpha);
+
+.gl-skeleton {
+  position: relative;
+  background: @skeleton-text-background;
+  display: block;
+  width: 100%;
+  height: inherit;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  line-height: 10px;
+  user-select: none;
+  pointer-events: none;
+  &.gl-skeleton-text-animated {
+    position: relative;
+
+    background: linear-gradient(to right, @skeleton-text-background 8%, @skeleton-text-background-animated 18%, @skeleton-text-background 33%);
+    background-size: 800px 104px;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: shimmer;
+    animation-timing-function: linear;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -468px 0
+  }
+
+  100% {
+    background-position: 468px 0
+  }
+}

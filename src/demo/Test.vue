@@ -1,5 +1,7 @@
 <template>
   <div>
+    <skeleton style="width: 100px; height: 100px; border-radius: 50%;"></skeleton>
+    <skeleton :animated="true"></skeleton>
     <ion-icon name="heart"></ion-icon>
     <button class="button button-positive button-block">positive</button>
     <div class="item row">
@@ -20,6 +22,7 @@
     import Scalable from '../packages/scalable'
     import Badge from 'packages/badge'
     import Hairline from 'packages/hairline';
+    import Skeleton from "packages/skeleton/skeleton";
 
     export default {
         name: 'Test',
@@ -27,7 +30,8 @@
         components: {
             Scalable,
             Badge,
-            Hairline
+            Hairline,
+            Skeleton
         }
     }
 </script>
