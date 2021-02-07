@@ -8,13 +8,8 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 export default class Hairline extends Vue {
     @Prop({default: 'bottom'}) readonly position!: 'bottom' | 'top' | 'left' | 'right';
 
-    get positionNames (): {[key: string]: boolean} {
-        return {
-            'gl-hairline-top': this.position === 'top',
-            'gl-hairline-bottom': this.position === 'bottom',
-            'gl-hairline-left': this.position === 'left',
-            'gl-hairline-right': this.position === 'right'
-        };
+    get classList (): Array<string> {
+        return [`gl-hairline-${this.position}`]
     }
 }
 </script>
