@@ -1,0 +1,34 @@
+<script lang="ts">
+import 'reflect-metadata';
+import { Component, Prop, Vue, Emit } from 'vue-property-decorator';
+
+type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
+ | 'danger' | 'light' | 'medium' | 'dark';
+
+@Component({
+    name: 'GlButton'
+})
+export default class Button extends Vue {
+    @Prop({default: 'primary'}) readonly color!: PredefinedColors;
+    @Prop({default: 'default'}) readonly fill!: 'clear' | 'outline' | 'default';
+    @Prop({default: 'default'}) size!: 'small' | 'default' | 'large';
+    @Prop({default: 'button'}) type!: 'submit' | 'reset' | 'button';
+    @Prop({default: 'block'}) expand!: 'full' | 'block' | 'inline';
+    @Prop({default: false}) isLoading!: boolean;
+    @Prop({default: false}) readonly disabled!: boolean;
+
+    get classList () {
+        return [
+            `gl-button-fill-${this.fill}`,
+            `gl-button-size-${this.size}`,
+            `gl-button-expand-${this.expand}`,
+            `gl-button-color-${this.color}`
+        ];
+    }
+
+    @Emit('click')
+    handleClick (event: Event) {}
+}
+</script>
+
+<template src="./button.html"></template>
