@@ -11,10 +11,10 @@ type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warn
 export default class Button extends Vue {
     @Prop({default: 'primary'}) readonly color!: PredefinedColors;
     @Prop({default: 'default'}) readonly fill!: 'clear' | 'outline' | 'default';
-    @Prop({default: 'default'}) size!: 'small' | 'default' | 'large';
-    @Prop({default: 'button'}) type!: 'submit' | 'reset' | 'button';
-    @Prop({default: 'block'}) expand!: 'full' | 'block' | 'inline';
-    @Prop({default: false}) isLoading!: boolean;
+    @Prop({default: 'default'}) readonly size!: 'small' | 'default' | 'large';
+    @Prop({default: 'button'}) readonly type!: 'submit' | 'reset' | 'button';
+    @Prop({default: 'block'}) readonly expand!: 'full' | 'block' | 'inline';
+    @Prop({default: false}) readonly isLoading!: boolean;
     @Prop({default: false}) readonly disabled!: boolean;
 
     get classList () {
