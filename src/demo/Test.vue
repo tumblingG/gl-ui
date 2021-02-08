@@ -1,22 +1,10 @@
 <template>
   <div>
-    <gl-button :expand="'block'" color="primary" fill="clear">
-      按钮
-    </gl-button>
-    <gl-button :expand="'inline'" color="primary" fill="outline" >
-      按钮
-    </gl-button>
-    <gl-button :expand="'block'" color="secondary">
-      <ion-icon name="heart-outline" v-slot:start></ion-icon>
-      按钮
-    </gl-button>
+    <div style="padding: 10px;">
+      <toggle :disabled="true" v-model="checked"></toggle>
+      <toggle color="secondary" v-model="checked"></toggle>
+    </div>
     <gl-button :expand="'block'" color="tertiary">按钮</gl-button>
-    <gl-button :expand="'block'" color="success">按钮</gl-button>
-    <gl-button :expand="'block'" color="warning">按钮</gl-button>
-    <gl-button :expand="'block'" color="danger">按钮</gl-button>
-    <gl-button :expand="'block'" color="dark">按钮</gl-button>
-    <gl-button :expand="'block'" color="medium">按钮</gl-button>
-    <gl-button :expand="'block'" color="light">按钮</gl-button>
     <skeleton style="width: 100px; height: 100px; border-radius: 50%;"></skeleton>
     <skeleton :animated="true"></skeleton>
     <ion-icon name="heart"></ion-icon>
@@ -41,6 +29,7 @@
     import Hairline from 'packages/hairline';
     import Skeleton from "packages/skeleton/skeleton";
     import GlButton from "packages/button/button";
+    import Toggle from "packages/toggle/toggle";
 
     export default {
         name: 'Test',
@@ -50,7 +39,12 @@
             Badge,
             Hairline,
             Skeleton,
-            GlButton
+            GlButton,
+            Toggle
+        },
+
+        data() {
+          return {checked: false}
         }
     }
 </script>
