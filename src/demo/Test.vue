@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <radio :options="options" color="secondary" v-model="value"></radio>
+    </div>
     <div style="padding: 10px;">
       <toggle :disabled="true" v-model="checked"></toggle>
       <toggle color="secondary" v-model="checked"></toggle>
@@ -30,6 +33,7 @@
     import Skeleton from "packages/skeleton/skeleton";
     import GlButton from "packages/button/button";
     import Toggle from "packages/toggle/toggle";
+    import Radio from "packages/radio/radio";
 
     export default {
         name: 'Test',
@@ -40,11 +44,16 @@
             Hairline,
             Skeleton,
             GlButton,
-            Toggle
+            Toggle,
+            Radio
         },
 
         data() {
-          return {checked: false}
+          return {
+            checked: false,
+            options: [{label: 'A', disabled: true, value: 'A'}, 'B', 'C'],
+            value: 'A'
+          }
         }
     }
 </script>

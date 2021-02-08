@@ -1,0 +1,96 @@
+@import "color";
+
+.gl-radio {
+  background-color: #fff;
+  color: black;
+
+  &.gl-list {
+    padding-left: 16px;
+    .gl-list-item {
+      padding-left: 0;
+    }
+  }
+
+  &-label {
+    display: block;
+    padding: 0 10px;
+  }
+
+  &-left {
+    flex: none;
+  }
+
+  &-right {
+    flex: 1;
+    vertical-align: middle;
+    margin: 1px 0 0 10px;
+  }
+
+  &-inner {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: #fff;
+    border-radius: 100%;
+    border: 1px solid #ccc;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+
+    &:after {
+      content: ' ';
+      border-radius: 100%;
+      top: 5px;
+      left: 5px;
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      transition: transform .2s ease-in-out;
+      transform: scale(0);
+    }
+  }
+
+  &-input {
+    display: none;
+
+    &:checked+.gl-radio-inner {
+      background-color: #26a2ff;
+      border-color: #26a2ff;
+      &:after {
+        transform: scale(1);
+        background-color: #fff;
+      }
+      .radio-color(primary, @color-primary-tint);
+      .radio-color(secondary, @color-secondary-tint);
+      .radio-color(tertiary, @color-tertiary-tint);
+      .radio-color(success, @color-success-tint);
+      .radio-color(warning, @color-warning-tint);
+      .radio-color(danger, @color-danger-tint);
+      .radio-color(light, @color-light-tint);
+      .radio-color(medium, @color-medium-tint);
+      .radio-color(light, @color-medium-tint);
+    }
+
+    &[disabled]+.gl-radio-inner {
+      background-color: #d9d9d9 !important;
+      border-color: #ccc !important;
+      cursor: default;
+    }
+  }
+
+  &.is-right {
+    .gl-radio-left {
+      order: 2;
+    }
+    .gl-radio-right {
+      margin: 1px 10px 0 0;
+    }
+  }
+}
+
+.radio-color(@colorType, @color) {
+  &.gl-radio-color-@{colorType} {
+    background-color: @color;
+    border-color: @color;
+  }
+}
