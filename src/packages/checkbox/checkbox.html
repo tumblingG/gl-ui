@@ -1,14 +1,13 @@
-<div :class="classList" class="gl-radio gl-rc gl-list">
+<div :class="classList" class="gl-checkbox gl-rc gl-list">
     <label :key="index" class="gl-list-item" v-for="(option, index) in options">
         <hairline position="top" v-if="index > 0"></hairline>
         <span class="gl-rc-left">
                 <input :disabled="option.disabled"
-                       :name="radioName"
                        :value="option.value || option"
-                       class="gl-radio-input"
-                       type="radio"
+                       class="gl-checkbox-input"
+                       type="checkbox"
                        v-model="checkedValue"/>
-                <span :class="colorClassList" class="gl-radio-inner"></span>
+                <span :class="colorClassList" class="gl-checkbox-inner"></span>
             </span>
         <div class="gl-rc-right"><slot :option="option">{{option.label || option}}</slot></div>
     </label>

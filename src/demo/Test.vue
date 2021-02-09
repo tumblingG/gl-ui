@@ -1,6 +1,9 @@
 <template>
   <div>
     <div>
+      <checkbox :max="2" :options="checkboxOptions" align="right" color="warning" v-model="checkboxValue"></checkbox>
+    </div>
+    <div>
       <radio :options="options" color="secondary" v-model="value"></radio>
     </div>
     <div style="padding: 10px;">
@@ -34,6 +37,7 @@
     import GlButton from "packages/button/button";
     import Toggle from "packages/toggle/toggle";
     import Radio from "packages/radio/radio";
+    import Checkbox from "packages/checkbox/checkbox";
 
     export default {
         name: 'Test',
@@ -45,14 +49,19 @@
             Skeleton,
             GlButton,
             Toggle,
-            Radio
+            Radio,
+            Checkbox
         },
 
         data() {
           return {
             checked: false,
             options: [{label: 'A', disabled: true, value: 'A'}, 'B', 'C'],
-            value: 'A'
+            value: 'A',
+            checkboxOptions: ['A'],
+            // checkboxOptions: ['A', 'B', 'C'],
+            // checkboxValue: ['A', 'B']
+            checkboxValue: true
           }
         }
     }

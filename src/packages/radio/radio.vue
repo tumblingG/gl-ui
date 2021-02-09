@@ -21,7 +21,7 @@ export default class Radio extends Vue {
     @Prop({required: true}) options!: Array<RadioOptions | string>;
     @Prop({default: 'left'}) align!: 'left' | 'right';
 
-    @ModelSync('value', 'change') readonly checkedValue!: any;
+    @ModelSync('value', 'change') readonly checkedValue!: string;
 
     get radioName (): string {
         return `gl-radio-${uniqRadio++}`;

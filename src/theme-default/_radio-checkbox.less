@@ -1,0 +1,34 @@
+.gl-rc {
+  background-color: #fff;
+
+  &.gl-list {
+    padding-left: 16px;
+    .gl-list-item {
+      padding-left: 0;
+    }
+  }
+
+  &-label {
+    display: block;
+    padding: 0 10px;
+  }
+
+  &-left {
+    flex: none;
+  }
+
+  &-right {
+    flex: 1;
+    vertical-align: middle;
+    margin: 1px 0 0 10px;
+  }
+
+  &.is-right {
+    .gl-rc-left {
+      order: 2;
+    }
+    .gl-rc-right {
+      margin: 1px 10px 0 0;
+    }
+  }
+}
