@@ -1,0 +1,56 @@
+.gl-input {
+  position: relative;
+
+  &-wrapper {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    height: 50px;
+    padding: 10px 15px;
+    position: relative;
+    line-height: 14px;
+
+    &.is-textarea {
+      height: auto;
+    }
+  }
+
+  &-label {
+    display: table;
+    padding: 7px 10px 7px 0;
+    max-width: 200px;
+    width: 35%;
+    color: #484746;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  input, textarea {
+    font-size: 14px;
+    width: 100%;
+  }
+
+  textarea {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    resize: none;
+  }
+
+  &-clear {
+    position: absolute;
+    top: 14px;
+    right: 9px;
+    z-index: 3;
+    width: 24px;
+    height: 24px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAkCAYAAADhAJiYAAAAAXNSR0IArs4c6QAAA2FJREFUWAnNWLtu01AYru0oEQuCtVIZkXgFF+dC6ICggi59C2BA6kJHuiAxRH0LlkpcxJBGubV+hQq2BqkduSwoURLzfZV/c2L72E6ahPzS0Tnnv37+z93G2pTU7XZvD4fDx4ZhbMH0Dsq6X+jpwi89z/PquVzus+M4PyjISkZWxVartQPd5ygOguWy2AH0EHpdlMNyuXyUySZNqdPpbI7H47cAYafpJskBzjVNc69YLJ4m6umEAGAhK+8gf6nTmZFfQ7ZeAeAozj52yJrN5i0YvAcozpO5E3zX4Xu3Uqn8DDuPAPLBuDC4F1aeZx+gzhDDDoMy1SBQsPzMLBQMY/KD/ViWimECEOcMFBcyTGpQaTOWP0+FtRYMGVfTaDQ6CSRLbFiWdV9WX5AhLu0lYpgIpca+AsRND+lL22fO8SXPMO4PUNwJjzEdX6eCvecpxOcxKgGLsYmBDNlxuQMnEhy/QFo/UMl13Yf9fv8jmlWNUSOfz2/btv2HcqxcfnjaTk0MRybPJjQclERCWn+LAgMVCoVt9BvCU+oGZQKGfGTrlyLXNR1iMTGRnyBlkimdMp0eIDM3REEDKgLGt3kjdrqaGIiFqcy0zDnOHKYEULFgaENbHZAQf4uANkLMpG5VByo8TASeMs/i4mwYmN1f8QV346QJvEg2VN0ZwXBafGOGeMGaliKZEgezgvHt1wnIE2crUHsEdDkDEO2QaVZf1hCXBMR78DQUAcNhYhEn1wB1QUA9cZShjgXD1aRbffAZt3nqQvUI6FgnVfk8m1KWdmSiS6Zoq/rStbHa6yYOzE8w4OsgjfYZQJQ0qykWFAK9FjtdTQx8Npn+u4lPlUTC4XpTFDRgRBwBpdqKUkzdJRY5ww6hUIlRClg4Z2rtdtvjITsYDA4gSDoOqtA5xqa7TzC0DRzpG8Tw78YI49Mpzhy92xkknGN4Gm3SlJP6ivAle9Jedq3GDgD5d9osqZ033prcp+k4uOSzgyGzME++oM50JaHNdQhDVS+VSo9Qj8RPkCEyKACYXdRnorComjH8WAEYxpoARAZfklC0YVBnfxFE34wRfrUy1sSQqcFhsDo/G1RgK/M7RgXFNvapHVR8qvzfH1YEoxKfKnwdgMeVyPs4b5xy6+RVhuU7Sp3n5LS/9P4Cgt7XvQhDTLcAAAAASUVORK5CYII=);
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: 5px 5px;
+    visibility: hidden;
+
+    &.active {
+      visibility: visible;
+    }
+  }
+}

@@ -1,8 +1,11 @@
 <script lang="ts">
 import 'reflect-metadata';
 import {Component, ModelSync, Watch, Prop, Vue} from 'vue-property-decorator';
-import {PredefinedColors} from '@/packages/interface';
+// import {PredefinedColors} from '@/packages/interface';
 import Hairline from '../hairline/hairline.vue';
+
+type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
+    | 'danger' | 'light' | 'medium' | 'dark';
 
 interface CheckboxOptions {
     disabled?: boolean;

@@ -2,7 +2,10 @@
 import 'reflect-metadata';
 import {Component, ModelSync, Prop, Vue} from 'vue-property-decorator';
 import Hairline from '../hairline/hairline.vue';
-import {PredefinedColors} from '@/packages/interface';
+// import {PredefinedColors} from '@/packages/interface';
+
+type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
+    | 'danger' | 'light' | 'medium' | 'dark';
 
 interface RadioOptions {
     disabled?: boolean;

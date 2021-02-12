@@ -1,6 +1,13 @@
 <template>
   <div>
     <div>
+      <gl-input disabled label="用户名" placeholder="输入用户名"></gl-input>
+      <gl-input label="密码" placeholder="输入密码" type="password"></gl-input>
+      <gl-input label="电话" placeholder="输入电话号码" type="tel"></gl-input>
+      <gl-input placeholder="输入电话号hah码" type="tel"></gl-input>
+      <gl-input label="自我介绍" placeholder="自我介绍" rows="3" type="textarea"></gl-input>
+    </div>
+    <div>
       <checkbox :max="2" :options="checkboxOptions" align="right" color="warning" v-model="checkboxValue"></checkbox>
     </div>
     <div>
@@ -38,6 +45,7 @@
     import Toggle from "packages/toggle/toggle";
     import Radio from "packages/radio/radio";
     import Checkbox from "packages/checkbox/checkbox";
+    import GlInput from "packages/input/input";
 
     export default {
         name: 'Test',
@@ -50,7 +58,8 @@
             GlButton,
             Toggle,
             Radio,
-            Checkbox
+            Checkbox,
+            GlInput
         },
 
         data() {
@@ -58,10 +67,8 @@
             checked: false,
             options: [{label: 'A', disabled: true, value: 'A'}, 'B', 'C'],
             value: 'A',
-            checkboxOptions: ['A'],
-            // checkboxOptions: ['A', 'B', 'C'],
-            // checkboxValue: ['A', 'B']
-            checkboxValue: true
+            checkboxOptions: ['A', 'B', 'C'],
+            checkboxValue: ['A', 'B']
           }
         }
     }

@@ -1,7 +1,9 @@
 <script lang="ts">
 import 'reflect-metadata';
 import { Component, Prop, Vue, Emit } from 'vue-property-decorator';
-import {PredefinedColors} from '../interface';
+// import {PredefinedColors} from '../interface';
+type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
+    | 'danger' | 'light' | 'medium' | 'dark';
 
 @Component({
     name: 'GlButton'

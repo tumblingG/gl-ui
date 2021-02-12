@@ -1,0 +1,38 @@
+<div class="gl-input">
+    <label :class="{'is-textarea': type === 'textarea'}"
+        class="gl-input-wrapper">
+        <hairline position="top"></hairline>
+        <slot name="start">
+            <span class="gl-input-label" v-if="label != ''">{{label}}</span>
+        </slot>
+        <textarea :disabled="disabled"
+                  :placeholder="placeholder"
+                  :readonly="readonly"
+                  :rows="rows"
+                  :type="type"
+                  @blur="onBlur($event)"
+                  @compositionend="compositionEnd"
+                  @compositionstart="compositionStart"
+                  @focus="onFocus($event)"
+                  @input="handleInput($event)"
+                  ref="input"
+                  v-if="type === 'textarea'"
+                  v-model="innerValue">
+        </textarea>
+        <input :disabled="disabled"
+               :placeholder="placeholder"
+               :readonly="readonly"
+               :type="type"
+               @blur="onBlur($event)"
+               @compositionend="compositionEnd"
+               @compositionstart="compositionStart"
+               @focus="onFocus($event)"
+               @input="handleInput($event)"
+               ref="input"
+               v-else
+               v-model="innerValue"
+            />
+        <hairline position="bottom"></hairline>
+    </label>
+    <span :class="{'active': showClearButton}" @click="clearValue" class="gl-input-clear" v-if="clear && type !== 'textarea'"></span>
+</div>
