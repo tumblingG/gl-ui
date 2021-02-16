@@ -2,6 +2,7 @@
   <div>
     <div>
       <gl-button @click="showLoading">Loading</gl-button>
+      <gl-button @click="showToast">Toast</gl-button>
     </div>
     <div>
       <gl-input disabled label="用户名" placeholder="输入用户名"></gl-input>
@@ -50,6 +51,7 @@
     import Checkbox from "packages/checkbox/checkbox";
     import GlInput from "packages/input/input";
     import Loading from "packages/loading";
+    import Toast from "packages/toast";
 
     export default {
         name: 'Test',
@@ -83,6 +85,10 @@
             setTimeout(() => {
               Loading.hide();
             }, 3000);
+          },
+
+          showToast() {
+            Toast.show('请输入数字')
           }
         }
     }
