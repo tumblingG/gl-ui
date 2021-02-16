@@ -1,0 +1,14 @@
+<transition name="gl-loading">
+    <div class="gl-loading" v-show="state === 2">
+        <div class="gl-loading-container">
+            <div class="gl-loading-spinner">
+                <svg viewBox="0 0 64 64">
+                    <g stroke-linecap="round" stroke-width="4"><line transform="translate(32,32) rotate(180)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1"></animate></line><line transform="translate(32,32) rotate(210)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values="0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0"></animate></line><line transform="translate(32,32) rotate(240)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".1;0;1;.85;.7;.65;.55;.45;.35;.25;.15;.1"></animate></line><line transform="translate(32,32) rotate(270)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".15;.1;0;1;.85;.7;.65;.55;.45;.35;.25;.15"></animate></line><line transform="translate(32,32) rotate(300)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".25;.15;.1;0;1;.85;.7;.65;.55;.45;.35;.25"></animate></line><line transform="translate(32,32) rotate(330)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".35;.25;.15;.1;0;1;.85;.7;.65;.55;.45;.35"></animate></line><line transform="translate(32,32) rotate(0)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".45;.35;.25;.15;.1;0;1;.85;.7;.65;.55;.45"></animate></line><line transform="translate(32,32) rotate(30)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".55;.45;.35;.25;.15;.1;0;1;.85;.7;.65;.55"></animate></line><line transform="translate(32,32) rotate(60)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".65;.55;.45;.35;.25;.15;.1;0;1;.85;.7;.65"></animate></line><line transform="translate(32,32) rotate(90)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".7;.65;.55;.45;.35;.25;.15;.1;0;1;.85;.7"></animate></line><line transform="translate(32,32) rotate(120)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values=".85;.7;.65;.55;.45;.35;.25;.15;.1;0;1;.85"></animate></line><line transform="translate(32,32) rotate(150)" y1="17" y2="29"><animate attributeName="stroke-opacity" dur="750ms" repeatCount="indefinite" values="1;.85;.7;.65;.55;.45;.35;.25;.15;.1;0;1"></animate></line></g>
+                </svg>
+            </div>
+            <span class="gl-loading-tip" v-if="tips">{{tips}}</span>
+        </div>
+    </div>
+</transition>
+
+

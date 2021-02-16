@@ -1,6 +1,9 @@
 <template>
   <div>
     <div>
+      <gl-button @click="showLoading">Loading</gl-button>
+    </div>
+    <div>
       <gl-input disabled label="用户名" placeholder="输入用户名"></gl-input>
       <gl-input label="密码" placeholder="输入密码" type="password"></gl-input>
       <gl-input label="电话" placeholder="输入电话号码" type="tel"></gl-input>
@@ -46,6 +49,7 @@
     import Radio from "packages/radio/radio";
     import Checkbox from "packages/checkbox/checkbox";
     import GlInput from "packages/input/input";
+    import Loading from "packages/loading";
 
     export default {
         name: 'Test',
@@ -69,6 +73,16 @@
             value: 'A',
             checkboxOptions: ['A', 'B', 'C'],
             checkboxValue: ['A', 'B']
+          }
+        },
+
+        methods: {
+          showLoading() {
+            Loading.show('正在加载...');
+
+            setTimeout(() => {
+              Loading.hide();
+            }, 3000);
           }
         }
     }

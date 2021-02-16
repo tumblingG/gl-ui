@@ -1,0 +1,37 @@
+.gl-loading {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  transition: opacity .1s ease-in-out;
+  &-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: inline-block;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, 0.8);
+    text-align: center;
+  }
+
+  &-spinner svg {
+    width: 28px;
+    height: 28px;
+    stroke: #FFF;
+    fill: #FFF;
+  }
+
+  &-tip {
+    font-size: 14px;
+    line-height: 14px;
+    color: white;
+  }
+}
+
+.gl-loading-enter-active,
+.gl-loading-leave-to {
+  opacity: 0;
+}
