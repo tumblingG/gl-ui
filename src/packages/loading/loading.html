@@ -1,5 +1,5 @@
 <transition name="gl-animation-fade">
-    <div class="gl-loading" v-show="state === 2">
+    <div @touchmove.prevent class="gl-loading" v-show="state === 2">
         <div class="gl-loading-container">
             <div class="gl-loading-spinner">
                 <svg viewBox="0 0 64 64">
