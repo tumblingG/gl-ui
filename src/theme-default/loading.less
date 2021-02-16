@@ -1,15 +1,10 @@
+@import "./mixins";
+
 .gl-loading {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
+  .fixed-fullscreen();
   transition: opacity .1s ease-in-out;
   &-container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    .position-center();
     display: inline-block;
     padding: 15px;
     border-radius: 4px;
@@ -31,7 +26,3 @@
   }
 }
 
-.gl-loading-enter-active,
-.gl-loading-leave-to {
-  opacity: 0;
-}
