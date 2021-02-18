@@ -1,0 +1,33 @@
+<div :class="classList"
+     @mousedown="onRefresh ? mouseDown($event) : undefined"
+     @mousemove="onRefresh ? mouseMove($event) : undefined"
+     @mouseup="onRefresh ? mouseUp($event) : undefined"
+     @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined"
+     @touchend="onRefresh ? touchEnd($event) : undefined"
+     @touchmove="onRefresh ? touchMove($event) : undefined"
+     @touchmove="onRefresh ? touchStart($event) : undefined"
+     class="gl-scroll">
+    <div :style="{
+        transform: 'translate3d(0, ' + top + 'px, 0)',
+        webkitTransform: 'translate3d(0, ' + top + 'px, 0)'
+        }"
+        class="scroll-inner">
+        <div class="pull-to-refresh-layer" v-if="!!onRefresh">
+            <slot name="refresh">
+                <div class="preloader"></div>
+                <div class="pull-to-refresh-arrow"></div>
+                <div class="label-down">下拉刷新</div>
+                <div class="label-up">释放刷新</div>
+                <div class="label-refresh">正在刷新..</div>
+            </slot>
+        </div>
+        <slot></slot>
+        <div class="infinite-layer" v-if="!!onInfinite">
+            <slot name="infinite">
+                <div class="infinite-preloader"></div>
+                <span class="label-loading">正在加载..</span>
+            </slot>
+        </div>
+    </div>
+
+</div>
