@@ -1,0 +1,97 @@
+@import "./color";
+
+.gl-tabs {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  background-color: #fff;
+  user-select: none;
+
+  &-mode {
+    &-md {
+      height: 49px;
+      line-height: 49px;
+      border-bottom: .5px solid #ddd;
+      .gl-tabs-item {
+        display: block;
+        flex: 1;
+        height: 100%;
+        overflow: hidden;
+        text-align: center;
+        text-decoration: none;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 400;
+        font-size: 14px;
+        transition: color .1s ease;
+      }
+    }
+    &-ios {
+      height: auto;
+      line-height: normal;
+      .gl-tabs-item {
+        flex: 1;
+        display: block;
+        overflow: hidden;
+        padding: 0 16px;
+        width: 0;
+        border-width: 1px 0 1px 1px;
+        border-style: solid;
+        border-radius: 0;
+        text-align: center;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 12px;
+        line-height: 28px;
+        min-height: 30px;
+        &:first-child {
+          border-radius: 5px 0 0 5px;
+        }
+        &:last-child {
+          border-right-width: 1px;
+          border-radius: 0 5px 5px 0;
+        }
+      }
+    }
+  }
+
+}
+
+.tabs-color(primary, @color-primary-rgb);
+.tabs-color(secondary, @color-secondary-rgb);
+.tabs-color(tertiary, @color-tertiary-rgb);
+.tabs-color(success, @color-success-rgb);
+.tabs-color(warning, @color-warning-rgb);
+.tabs-color(danger, @color-danger-rgb);
+.tabs-color(dark, @color-dark-rgb);
+.tabs-color(medium, @color-medium-rgb);
+.tabs-color(light, @color-light-rgb);
+
+.tabs-color(@colorType, @color-tint) {
+  .gl-tabs-color-@{colorType} {
+    &.gl-tabs-mode {
+      &-md {
+        .gl-tabs-item {
+          color: rgba(@color-tint, .4);
+          &.active {
+            color: rgba(@color-tint,  1);
+            border-bottom: 2px solid rgb(@color-tint);
+          }
+        }
+      }
+      &-ios {
+        .gl-tabs-item {
+          border-color: rgb(@color-tint);
+          background-color: transparent;
+          color: rgb(@color-tint);
+          &.active {
+            color: white;
+            background-color: rgb(@color-tint);
+          }
+        }
+      }
+    }
+  }
+}

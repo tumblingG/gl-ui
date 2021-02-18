@@ -1,6 +1,13 @@
 <template>
   <div>
     <div>
+      <tabs color="success" mode="ios" v-model="id">
+        <tabs-item id="tab1">tab1</tabs-item>
+        <tabs-item id="tab2">tab2</tabs-item>
+        <tabs-item id="tab3">tab3</tabs-item>
+      </tabs>
+    </div>
+    <div>
       <gl-button @click="showLoading">Loading</gl-button>
       <gl-button @click="showToast">Toast</gl-button>
     </div>
@@ -52,6 +59,8 @@
     import GlInput from "packages/input/input";
     import Loading from "packages/loading";
     import Toast from "packages/toast";
+    import Tabs from "packages/tabs";
+    import TabsItem from "packages/tabs-item";
 
     export default {
         name: 'Test',
@@ -65,7 +74,9 @@
             Toggle,
             Radio,
             Checkbox,
-            GlInput
+            GlInput,
+            Tabs,
+            TabsItem
         },
 
         data() {
@@ -74,7 +85,8 @@
             options: [{label: 'A', disabled: true, value: 'A'}, 'B', 'C'],
             value: 'A',
             checkboxOptions: ['A', 'B', 'C'],
-            checkboxValue: ['A', 'B']
+            checkboxValue: ['A', 'B'],
+            id: 'tab1'
           }
         },
 
