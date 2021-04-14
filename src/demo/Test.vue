@@ -1,6 +1,9 @@
 <template>
   <div>
     <div>
+      <spinner :size="36"></spinner>
+    </div>
+    <div>
       <tabs color="success" mode="ios" v-model="id">
         <tabs-item id="tab1">tab1</tabs-item>
         <tabs-item id="tab2">tab2</tabs-item>
@@ -61,6 +64,7 @@
     import Toast from "packages/toast";
     import Tabs from "packages/tabs";
     import TabsItem from "packages/tabs-item";
+    import Spinner from "packages/spinner/spinner";
 
     export default {
         name: 'Test',
@@ -76,7 +80,8 @@
             Checkbox,
             GlInput,
             Tabs,
-            TabsItem
+            TabsItem,
+            Spinner
         },
 
         data() {
