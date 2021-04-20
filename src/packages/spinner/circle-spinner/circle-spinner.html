@@ -1,2 +1,7 @@
-<div class="gl-circle-spinner">
+<div :style="spinnerStyle" class="gl-circle-spinner">
+    <div :class="[`gl-circle-spinner-item${n}`, `gl-circle-spinner-color-${color}`]"
+         :key="n"
+         class="gl-circle-spinner-item"
+         v-for="n in 12"
+    ></div>
 </div>

@@ -1,27 +1,14 @@
 <script lang="ts">
 import 'reflect-metadata';
-import { Component, Prop, Vue } from 'vue-property-decorator';
-
-type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
-    | 'danger' | 'light' | 'medium' | 'dark';
+import { Component } from 'vue-property-decorator';
+import SpinnerCommon from '../spinner-common';
 
 @Component({
     name: 'GlBubblingSpinner'
 })
-export default class BubblingSpinner extends Vue {
-    @Prop({default: 'primary'}) readonly color!: PredefinedColors;
-    @Prop({default: 0}) readonly size!: number;
-
+export default class BubblingSpinner extends SpinnerCommon {
     get spinnerSize(): string {
-        return ((this.size || (this.$parent as any).size || 28) / 3) + 'px';
-    }
-
-    get spinnerStyle() {
-        return {
-            width: this.spinnerSize,
-            height: this.spinnerSize,
-            background: '#ccc'
-        };
+        return (this.size / 3) + 'px';
     }
 }
 </script>

@@ -1,5 +1,8 @@
 <div class="gl-bubbling-spinner">
-    <div :style="spinnerStyle" class="gl-bubbling-spinner-item1"></div>
-    <div :style="spinnerStyle" class="gl-bubbling-spinner-item2"></div>
-    <div :style="spinnerStyle" class="gl-bubbling-spinner-item3"></div>
+    <div :class="[`gl-bubbling-spinner-item${n}`,`gl-bubbling-spinner-color-${color}`]"
+         :key="n"
+         :style="spinnerStyle"
+         class="gl-bubbling-spinner-item"
+         v-for="n in 3">
+    </div>
 </div>

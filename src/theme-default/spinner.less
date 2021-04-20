@@ -1,5 +1,8 @@
+@import "color";
+
+ //bubbling style
 .gl-bubbling-spinner {
-  &-item1, &-item2, &-item3 {
+  &-item {
     border-radius: 100%;
     display: inline-block;
     animation: gl-bubbling-spinner-animation 1.4s infinite ease-in-out both;
@@ -21,3 +24,59 @@
       transform: scale(1.0);
     }
 }
+
+// circle style
+.gl-circle-spinner {
+  position: relative;
+
+  &-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    &::before {
+      content: " ";
+      display: block;
+      margin: 0 auto;
+      width: 15%;
+      height: 15%;
+      border-radius: 100%;
+      animation: gl-spinner-circle-animation 1.2s infinite ease-in-out both;
+    }
+
+    each(range(2, 12), {
+      &@{value} {
+        transform: rotate((360deg / 12 * (@value - 1)));
+        &::before {
+          animation-delay: (-1.2s + 1.2s / 12 * (@value - 1));
+        }
+      }
+    });
+  }
+}
+
+@keyframes gl-spinner-circle-animation {
+  0%, 39%, 100% { opacity: 0 }
+  40% { opacity: 1 }
+}
+
+.bubbling-spinner-color(@colorType, @color) {
+  .gl-bubbling-spinner-color-@{colorType} {
+    background-color: @color;
+  }
+}
+
+.circle-spinner-color(@colorType, @color) {
+  .gl-circle-spinner-color-@{colorType} {
+    &::before {
+      background-color: @color;
+    }
+  }
+}
+
+each(@colorTypes, {
+  .bubbling-spinner-color(@value, extract(@allTintColors, @index));
+  .circle-spinner-color(@value, extract(@allTintColors, @index));
+});

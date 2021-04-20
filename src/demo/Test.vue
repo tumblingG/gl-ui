@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <spinner :size="36"></spinner>
+      <spinner :color="'secondary'" :size="30" :type="'circle'"></spinner>
     </div>
     <div>
       <tabs color="success" mode="ios" v-model="id">
