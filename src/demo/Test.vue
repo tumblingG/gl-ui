@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow: scroll;  height:100%;">
     <div>
       <spinner :color="'secondary'" :size="30" :type="'circle'"></spinner>
     </div>

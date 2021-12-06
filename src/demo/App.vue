@@ -18,5 +18,6 @@
 <style lang="less">
   #app {
     color: red;
+    height:100%;
   }
 </style>

@@ -4,3 +4,9 @@ declare module '*.vue' {
       [key: string]: any;
   }
 }
+
+declare module '*.vue.ts' {
+  import Vue from 'vue';
+  export default Vue;
+}
+
