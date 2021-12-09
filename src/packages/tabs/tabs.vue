@@ -1,9 +1,7 @@
 <script lang="ts">
 import 'reflect-metadata';
-import { Component, Prop, Vue, ModelSync, Watch } from 'vue-property-decorator';
-
-type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
-    | 'danger' | 'light' | 'medium' | 'dark';
+import { Component, Prop, Vue, ModelSync } from 'vue-property-decorator';
+import { PredefinedColors } from '../interface';
 
 @Component({
     name: 'GlTabs'
