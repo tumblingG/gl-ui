@@ -1,7 +1,7 @@
 <script lang="ts">
 import 'reflect-metadata';
 import { Component } from 'vue-property-decorator';
-import SpinnerCommon from '../spinner-common';
+import SpinnerCommon from '../spinner-common.vue';
 
 @Component({
     name: 'GlBubblingSpinner'
