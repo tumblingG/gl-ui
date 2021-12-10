@@ -1,0 +1,24 @@
+<div class="gl-modal"
+     :class="{'gl-modal-slide-in': visible}">
+  <div class="gl-modal-mask"
+       @click.stop="maskClickEvent"
+       @touchmove.prevent>
+  </div>
+  <div
+    ref="modal"
+    @touchmove="stopScrollChain($event)"
+    :id="uid"
+    class="gl-modal-content"
+    :class="animationClass"
+    :style="{minHeight, width}">
+    <i class="fs-sail-iconfont fs-sail-icon-close gl-modal-close"
+       v-if="showCloseIcon"
+       @click.stop="closeModal"></i>
+    <component ref="componentRef"
+               :is="config.component"
+               :componentParams="config.componentParams || {}"
+               @onOk="confirm"
+               @onClose="closeModal"
+    ></component>
+  </div>
+</div>
