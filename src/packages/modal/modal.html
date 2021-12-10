@@ -14,11 +14,12 @@
     <i class="fs-sail-iconfont fs-sail-icon-close gl-modal-close"
        v-if="showCloseIcon"
        @click.stop="closeModal"></i>
-    <component ref="componentRef"
-               :is="config.component"
-               :componentParams="config.componentParams || {}"
-               @onOk="confirm"
-               @onClose="closeModal"
+    <component
+        ref="componentRef"
+        :is="options.component"
+        :attrs="options.componentParams || {}"
+        @onOk="confirm"
+        @onClose="closeModal"
     ></component>
   </div>
 </div>

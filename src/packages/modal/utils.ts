@@ -39,7 +39,7 @@ export function createUid (): string {
  * @param fn {function} 回调函数
  * @return {function} 取消绑定的函数，执行该函数将会取消绑定
  */
-export function addEvent(el: HTMLElement, type: string, fn: EventListenerOrEventListenerObject): (() => void) {
+export function addEvent(el: HTMLElement, type: string, fn: any): (() => void) {
   el.addEventListener(type, fn);
   return () => el.removeEventListener(type, fn);
 }
