@@ -1,5 +1,12 @@
 <template>
   <div>
+    <div style="height: 300px;">
+      <swipe>
+        <swipe-item style="background: red;">1</swipe-item>
+        <swipe-item style="background: green;">2</swipe-item>
+        <swipe-item style="background: yellow;">3</swipe-item>
+      </swipe>
+    </div>
     <div>
       <spinner :color="'secondary'" :size="30" :type="'circle'"></spinner>
     </div>
@@ -65,6 +72,8 @@
     import Tabs from "packages/tabs";
     import TabsItem from "packages/tabs-item";
     import Spinner from "packages/spinner/spinner";
+    import Swipe from "packages/swipe/swipe";
+    import SwipeItem from "packages/swipe-item/swipe-item";
 
     export default {
         name: 'Test',
@@ -81,7 +90,9 @@
             GlInput,
             Tabs,
             TabsItem,
-            Spinner
+            Spinner,
+            Swipe,
+            SwipeItem
         },
 
         data() {
