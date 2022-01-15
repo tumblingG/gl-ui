@@ -1,10 +1,8 @@
 <script lang="ts">
 import 'reflect-metadata';
 import { Component, Prop, Vue, ModelSync } from 'vue-property-decorator';
-// import {PredefinedColors} from '../interface';
 
-type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
-    | 'danger' | 'light' | 'medium' | 'dark';
+import { PredefinedColors } from '../interface';
 
 @Component({
     name: 'GlToggle'

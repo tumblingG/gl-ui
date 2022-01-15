@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="overflow: scroll;  height:100%;">
     <div style="height: 300px;">
       <swipe>
         <swipe-item style="background: red;">1</swipe-item>

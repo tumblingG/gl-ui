@@ -35,19 +35,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [
-                    'vue-style-loader',
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            esModule: false,
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.less$/,
+                test: /\.(less|css)$/,
                 use: [
                     'vue-style-loader',
                     {
@@ -80,10 +68,12 @@ module.exports = {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
                 use: [
-                    "babel-loader",
                     {
                         loader: "ts-loader",
-                        options: { appendTsxSuffixTo: [/\.vue$/] }
+                        options: {
+                            appendTsSuffixTo: [/\.vue$/],
+                            transpileOnly: true,
+                        }
                     }
                 ]
             },

@@ -1,0 +1,70 @@
+.gl-modal {
+  z-index: 300;
+  &-mask {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .1);
+    transform: translateZ(0);
+    contain: strict;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    z-index: 300;
+  }
+  &-content {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-radius: 4px;
+    background: #fff;
+    z-index: 300;
+    transition: transform .3s ease-in-out;
+    transform: translateY(100%);
+    &.gl-modal-fade-in-animation {
+      top: 50%;
+      left: 50%;
+      bottom: auto;
+      right: auto;
+      transition: none;
+      transform: translate(-50%, -50%) !important;
+    }
+  }
+  &-close {
+    font-size: 12px;
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    &:after {
+      content: ' ';
+      display: inline-block;
+      position: absolute;
+      top: -10px;
+      right: -15px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+}
+
+.gl-modal-slide-in {
+  .gl-modal-content {
+    transform: translateY(0);
+  }
+  .gl-modal-mask {
+    opacity: 1;
+  }
+}
+
+.gl-modal-scroll-el {
+  overflow-y: auto;
+  -webkit-overflow-scrolling:touch;
+  overscroll-behavior: contain;
+}
+
+
+

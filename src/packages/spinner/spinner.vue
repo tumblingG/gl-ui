@@ -4,8 +4,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import CircleSpinner from './circle-spinner/circle-spinner.vue';
 import BubblingSpinner from './bubbling-spinner/bubbling-spinner.vue';
 
-type PredefinedColors = 'primary' | 'secondary' | 'tertiary' | 'success' | 'warning'
-    | 'danger' | 'light' | 'medium' | 'dark';
+import { PredefinedColors } from '../interface';
 
 @Component({
     name: 'GlSpinner',
