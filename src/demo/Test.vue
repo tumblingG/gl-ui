@@ -1,6 +1,9 @@
 <template>
   <div style="overflow: scroll;  height:100%;">
     <div>
+      <grids :items="entrances" row="2" @cellClick="cellClick"></grids>
+    </div>
+    <div>
       <spinner :color="'secondary'" :size="30" :type="'circle'"></spinner>
     </div>
     <div>
@@ -65,6 +68,7 @@
     import Tabs from "packages/tabs";
     import TabsItem from "packages/tabs-item";
     import Spinner from "packages/spinner/spinner";
+    import Grids from 'packages/grids/grids';
 
     export default {
         name: 'Test',
@@ -81,7 +85,8 @@
             GlInput,
             Tabs,
             TabsItem,
-            Spinner
+            Spinner,
+            Grids
         },
 
         data() {
@@ -91,7 +96,13 @@
             value: 'A',
             checkboxOptions: ['A', 'B', 'C'],
             checkboxValue: ['A', 'B'],
-            id: 'tab1'
+            id: 'tab1',
+            entrances: [
+              '<div class="entrance assertive"><i class="icon ion-ios-flame"></i><br><span>热门</span></div>',
+              '<div class="entrance energized"><i class="icon ion-ios-star"></i><br><span>好评</span></div>',
+              '<div class="entrance balanced"><i class="icon ion-ios-location"></i><br><span>附近</span></div>',
+              '<div class="entrance positive"><i class="icon ion-ios-search"></i><br><span>搜索</span></div>',
+            ]
           }
         },
 
@@ -106,6 +117,10 @@
 
           showToast() {
             Toast.show('请输入数字')
+          },
+
+          cellClick(index) {
+            console.log(index);
           }
         }
     }

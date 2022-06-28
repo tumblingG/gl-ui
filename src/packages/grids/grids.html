@@ -1,0 +1,11 @@
+<div class="gl-grids">
+  <div class="gl-grids-row" v-for="(r, index) in rows">
+    <div v-if="index != 0 || (border == true || border == 'true')" class="gl-hairline-top"></div>
+    <div class="gl-grids-col" v-for="c in cols" @click="cellClicked(r * cols.length + c)">
+      <div v-if="c" class="gl-hairline-left"></div>
+      <div v-html="items[r * cols.length + c]"></div>
+    </div>
+  </div>
+  <div v-if="border == true || border == 'true'" class="gl-hairline-bottom"></div>
+</div>
+</div>
