@@ -1,5 +1,12 @@
 <template>
   <div style="overflow: scroll;  height:100%;">
+    <div style="height: 300px;">
+      <swipe>
+        <swipe-item style="background: red;">1</swipe-item>
+        <swipe-item style="background: green;">2</swipe-item>
+        <swipe-item style="background: yellow;">3</swipe-item>
+      </swipe>
+    </div>
     <div>
       <grids :items="entrances" row="2" @cellClick="cellClick"></grids>
     </div>
@@ -69,6 +76,8 @@
     import TabsItem from "packages/tabs-item";
     import Spinner from "packages/spinner/spinner";
     import Grids from 'packages/grids/grids';
+    import Swipe from "packages/swipe/swipe";
+    import SwipeItem from "packages/swipe-item/swipe-item";
 
     export default {
         name: 'Test',
@@ -86,7 +95,9 @@
             Tabs,
             TabsItem,
             Spinner,
-            Grids
+            Grids,
+            Swipe,
+            SwipeItem
         },
 
         data() {

@@ -1,0 +1,12 @@
+<div class="gl-swipe">
+    <div class="gl-swipe-wrap" ref="wrap">
+        <slot></slot>
+    </div>
+    <div class="gl-swipe-indicators" v-show="showIndicators">
+        <div :class="{'is-active': $index === index}"
+            :key="$index"
+            class="gl-swipe-indicator"
+            v-for="(page, $index) in pages">
+        </div>
+    </div>
+</div>
