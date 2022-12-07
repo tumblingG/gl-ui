@@ -5,7 +5,7 @@
      @scroll="(onInfinite || infiniteLoading) ? onScroll($event) : undefined"
      @touchend="onRefresh ? touchEnd($event) : undefined"
      @touchmove="onRefresh ? touchMove($event) : undefined"
-     @touchmove="onRefresh ? touchStart($event) : undefined"
+     @touchstart="onRefresh ? touchStart($event) : undefined"
      class="gl-scroll">
     <div :style="{
         transform: 'translate3d(0, ' + top + 'px, 0)',
